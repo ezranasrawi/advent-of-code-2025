@@ -1,22 +1,6 @@
-a, b = 11, 22
-
-a = 1188511880
-b =1188511890
-
-numbers = list(range(a,b+1))
-
-def eval_number(num):
-    s = str(num)
-    mid = len(s) // 2
-
-    return s[:mid] == s[mid:]
-
 from _getinput import getinput
 
-data = getinput('02', False)
-
 def parse_input(data):
-
     pairs = []
     for part in data.split(","):
         a, b = part.split("-")
@@ -24,15 +8,27 @@ def parse_input(data):
     
     return pairs
 
+def is_split(num):
+    s = str(num)
+    mid = len(s) // 2
+
+    return s[:mid] == s[mid:]
+
+def is_repeating(s: str) -> bool:
+    return s in (s + s)[1:-1]
+
+data = getinput('02', False)
 pairs = parse_input(data)
 
-total = 0
+part1, part2 = 0, 0
+
 for pair in pairs:
     a, b = pair
     for num in range(a, b + 1):
-        if eval_number(num):
-            total+=num
+        if is_split(num):
+            part1 += num
+        if is_repeating(str(num)):
+            part2 += num
 
-print(f"Total invalid: {total}")
-
-
+print(f"Part 1: {part1}")
+print(f"Part 2: {part2}")
