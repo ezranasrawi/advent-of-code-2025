@@ -1,3 +1,5 @@
+# --- Day 1: Secret Entrance ---
+
 from _getinput import getinput
 
 data = getinput('01', False)

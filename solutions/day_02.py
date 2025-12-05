@@ -1,3 +1,5 @@
+#--- Day 2: Gift Shop ---
+
 from _getinput import getinput
 
 def parse_input(data):
