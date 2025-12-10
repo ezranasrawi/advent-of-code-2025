@@ -18,16 +18,6 @@ for i, num in enumerate(nums):
 
 print('Part 1', total)
 
-def parse_r2l(num):
-    new = []
-
-    while num:
-        last = [n[-1] for n in num]
-        num = [n[:-1] for n in num if n[:-1]]
-        new.append(''.join(last))
-
-    return new
-
 data = getinput('06', False)
 data = list(map(list, zip(*data)))
 
