@@ -1,6 +1,6 @@
 from _getinput import getinput
 
-data = getinput('06', True)
+data = getinput('06', False)
 
 data = [line.split() for line in data]
 data = list(map(list, zip(*data)))
